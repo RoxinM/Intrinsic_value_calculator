@@ -1,9 +1,15 @@
 from WACC import WACC
+from GIV import GIV
 import utilities as util
 def main():
 
+    grahamIntrinsicValue = GIV.calculateGiv(GIV)
+
     companyName = util.getString("Company name")
     print(companyName)
+
+    stockPrice = util.getFloat("current stock price")
+    print(stockPrice)
     # ----------------------Cost Of Debt-----------------------------
     costOfDebt = WACC.calculateCostOfDebt(WACC)
     print(costOfDebt)
@@ -31,5 +37,6 @@ def main():
     print(wacc)
 
 companyName = ""
+stockPrice = 0
 
 main()

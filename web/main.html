@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Intinsic Calacutaerre</title>
+  <script type="text/javascript" src="eel.js"></script>
+  <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <script type="text/javascript" src="./js/myscripts.js"></script>
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+
+  <style>
+    body {
+      background-color: #040D14;
+      ;
+      color: ;
+    }
+
+    #companyName {
+      margin: 24px;
+      font-size: 48px;
+      border: 1px solid black;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      text-align: center;
+      text-transform: uppercase;
+      background: #040D14;
+      color: tomato;
+
+    }
+
+    #myTabContent {
+      padding: 24px;
+    }
+
+    .center {
+      text-align: center;
+      margin: auto;
+      width: 60%;
+    }
+
+    .input-group-text {
+      min-width: 200px;
+      background-color: #1e2124;
+      color: #f0f4f6;
+      border-color: #40494e;
+
+    }
+
+    .input-group>input,
+    .input-group>input:focus {
+
+      background-color: #2b2f33;
+      color: #f0f4f6;
+      border-color: #40494e;
+    }
+
+    .final-result {
+      color: tomato;
+      padding: 16px;
+      border-radius: 20px;
+    }
+
+    .card-container {
+      margin-bottom: 24px;
+    }
+
+    .nav-link.active,
+    .nav-link.active:hover {
+      color: tomato;
+      border: 2px solid tomato;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+      transition: all .5s ease;
+    }
+
+    .nav-link {
+      color: #f0f4f6;
+      outline: 0;
+      border: 2px solid transparent;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      text-transform: uppercase;
+      transition: all .5s ease;
+    }
+
+    .nav-link:hover {
+      color: hsl(9, 72%, 72%);
+    }
+  </style>
+
+</head>
+
+<body class="container">
+
+  <!--input type="text" id="companyName" placeholder="Company Name" /-->
+
+
+  <ul class="nav nav-pill" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="WACC-tab" data-toggle="tab" href="#WACC" role="tab" aria-controls="WACC"
+        aria-selected="false">WACC</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="GIV-tab" data-toggle="tab" href="#GIV" role="tab" aria-controls="GIV"
+        aria-selected="false">GIV</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="EPS-tab" data-toggle="tab" href="#EPS" role="tab" aria-controls="EPS"
+        aria-selected="false">EPS</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="DCF-tab" data-toggle="tab" href="#DCF" role="tab" aria-controls="DFC"
+        aria-selected="false">DFC</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="Summary-tab" data-toggle="tab" href="#Summary" role="tab" aria-controls="Summary"
+        aria-selected="false">Summary</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="WACC" role="tabpanel" aria-labelledby="WACC-tab">
+
+      <!--div class="row">
+        <div class="card-container col-sm-6 col-lg-3">
+          <div class="card">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+             
+          </div>
+        </div>
+
+        <div class="card-container col-sm-6 col-lg-3">
+          <div class="card">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+             
+          </div>
+        </div>
+
+        <div class="card-container col-sm-6 col-lg-3">
+          <div class="card">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            
+          </div>
+        </div>
+        <div class="card-container col-sm-6 col-lg-3">
+          <div class="card">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+             
+          </div>
+        </div>
+      </div>
+
+    </div-->
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="interestExpenselabel">Interest Expense</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="interestExpense"
+              aria-describedby="interestExpenselabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="STDebtlabel">ST Debt</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="STDebt"
+              aria-describedby="STDebtlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="LTDebtlabel">LT Debt</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="LTDebt"
+              aria-describedby="LTDebtlabel">
+          </div>
+
+        </div>
+
+        <div class="col-sm-6 center">
+          <h4 id="COD">Cost of Debt (%)</h4>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+
+        <div class="col-sm-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="incomeTaxExpenselabel">Income Tax Expense</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="incomeTaxExpense"
+              aria-describedby="incomeTaxExpenselable">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="incomeBeforeTaxlabel">Income Before Tax </span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="incomeBeforeTax"
+              aria-describedby="incomeBeforeTax">
+          </div>
+
+        </div>
+
+
+        <div class="col-sm-6 center">
+
+          <h4 id="ETR"> Effective Tax Rate(%)</h4>
+
+          <h4 id="ETR"> Cost of Debt *(1-t)(%)</h4>
+
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="riskFreeRatelabel">Risk-Free-Rate</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="riskFreeRate"
+              aria-describedby="riskFreeRatelabel">
+
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="betalabel">Beta</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="beta"
+              aria-describedby="betalabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="marketReturnlabel">Market Return</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="marketReturn"
+              aria-describedby="marketReturnlabel">
+          </div>
+        </div>
+        <div class="col-sm-6 center ">
+
+          <h4 id="TD"> Cost Of Equity(%)</h4>
+
+        </div>
+      </div>
+
+      <hr />
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="marketCaplabel">Market Cap</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="marketcap"
+              aria-describedby="marketCaplabel">
+
+          </div>
+        </div>
+
+        <div class="col-sm-6 center ">
+
+          <h4 id="TD"> Total Debt($)</h4>
+
+          <h4 id="Total"> Total($)</h4>
+
+          <h4 id="TD"> Weight Of Debt(%)</h4>
+
+          <h4 id="Total"> Weight Of Equity(%)</h4>
+
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="conainer" style="margin:20px;">
+        <h2 class="center final-result">WACC = 100%</h2>
+      </div>
+
+    </div>
+
+    <div class="tab-pane fade" id="GIV" role="tabpanel" aria-labelledby="GIV-tab">
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="earningsPerSharelabel">EPS</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="earningsPerShare"
+              aria-describedby="earningsPerSharelabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="PElabel">P/E Ratio</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="PE"
+              aria-describedby="PElabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="GRlabel">Growth Rate</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="GR"
+              aria-describedby="GRlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="GRMlabel">Growth Rate Multiplier</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="GRM"
+              aria-describedby="GRMlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="corpBondlabel">Corp. Bond</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="corpBond"
+              aria-describedby="corpBondlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="AAABYlabel">AAA Bond Yield</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="AAABY"
+              aria-describedby="AAABYlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="CPlabel">Current Price</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="CP"
+              aria-describedby="CPlabel">
+          </div>
+
+        </div>
+
+        <div class="col-sm-6 center ">
+
+          <h4 id="TD"> Intrinsic Value($)</h4>
+
+          <h4 id="Total"> Current Price($)</h4>
+
+          <h4 id="TD"> Buy/Sell</h4>
+
+          <h4 id="Total"> Upside(%)</h4>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="tab-pane fade" id="EPS" role="tabpanel" aria-labelledby="EPS-tab">
+
+      <div class="row">
+
+        <div class="col-sm-6">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="EPSTTMlabel">EPS TTM</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="EPSTTM"
+              aria-describedby="EPSTTMlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="growthRatelabel">GrowthRate</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="growthRate"
+              aria-describedby="growthRatelabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="discountRatelabel">Discount Rate</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="discountRate"
+              aria-describedby="discountRatelabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="PERlabel">P/E Ratio</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="PER"
+              aria-describedby="PERlabel">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="CPlabel">Current Price</span>
+            </div>
+            <input type="text" type="number" placeholder="00.00" class="form-control" id="CP"
+              aria-describedby="CPlabel">
+          </div>
+
+
+        </div>
+        
+        <div class="col-sm-6 center ">
+
+          <h4 id="TD"> Intrinsic Value($)</h4>
+
+          <h4 id="Total"> Current Price($)</h4>
+
+          <h4 id="TD"> Buy/Sell</h4>
+
+          <h4 id="Total"> Upside(%)</h4>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="tab-pane fade" id="DCF" role="tabpanel" aria-labelledby="DCF-tab">test</div>
+
+    <div class="tab-pane fade" id="Summary" role="tabpanel" aria-labelledby="Summary-tab">...</div>
+  </div>
+
+
+
+  <form>
+
+</body>
+
+</html>
